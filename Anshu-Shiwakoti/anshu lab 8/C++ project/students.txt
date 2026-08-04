@@ -1,0 +1,4 @@
+S101;Anshu Shiwakoti;pass;BEI;23;22
+S102;Dilasha Ghimire;pass;BEI;23;20
+S103;Niharika Sharma;pass;BCT;21;10
+S104;Pari Pokhrel;pass;BCT;21;20
