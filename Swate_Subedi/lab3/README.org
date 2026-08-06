@@ -1,0 +1,30 @@
+* LAB 3: Constructors and Destructors C++
+
+** Discussion:
+ From this lab, we are able to learn the uses of constructors and destructors in C++.
+
+ Here is the output of the lab code:
+
+ [[./labw/task1.cpp ][task1:]]
+
+ [[./op/output1.png]]
+
+ [[./labw/task2.cpp ][task2:]]
+
+ [[./op/output2.png]]
+
+ [[./labw/task3.cpp ][task3:]]
+
+ [[./op/output3.png]]
+
+ [[./labw/task4.cpp ][task4:]]
+
+ [[./op/output4.png]]
+
+ [[./labw/task4.cpp ][task5:]]
+
+ [[./op/output5.png]]
+
+
+** Conclusion:
+From this lab, we are able to conclude that Constructors and Destructors makes *making/initializing* class and *freeing* the memory of the *class* easier for the programmmers as we observe in our programs.
