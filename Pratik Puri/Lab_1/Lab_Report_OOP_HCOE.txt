@@ -1,0 +1,52 @@
+Lab Report: Basic C++ Programs — OOP Practical (HCOE)
+
+Course: Object Oriented Programming (OOP)
+Institution: Himalaya College of Engineering (HCOE)
+Lab: Lab 1 — Basic C++ Exercises
+Author: Pratik Puri
+Date: 2082/01/30
+
+Introduction
+-----------
+The objective of this lab session is to reinforce foundational C++ programming skills through a set of small, focused exercises. These programs exercise core programming concepts including input/output, arithmetic operations, control structures (loops and conditionals), modular code organization (functions), and basic algorithmic thinking. Although this course focuses on Object Oriented Programming, these introductory tasks establish the procedural and algorithmic building blocks that support later OOP concepts such as encapsulation and modular design.
+
+Discussion
+----------
+1. areaandperimeter.cpp
+- Purpose: Compute and display the area and perimeter of a rectangle.
+- Implementation notes: The program prompts the user for length and breadth, then calls two separate functions `area()` and `perimeter()` to compute results. Using functions separates concerns and demonstrates simple modular design.
+
+2. firstpractical.cpp
+- Purpose: Calculate the perimeter of a rectangle.
+- Implementation notes: This program reads rectangle dimensions from the user and outputs the perimeter directly in `main()`. It reinforces I/O and arithmetic expressions.
+
+3. forloop.cpp
+- Purpose: Sum the integers from 1 to 5.
+- Implementation notes: Uses a `for` loop to accumulate a running total in `sum` and prints the result. This exercise demonstrates loop control and accumulator pattern used in many algorithms.
+
+4. pattern.cpp
+- Purpose: Print a simple numeric triangle pattern.
+- Implementation notes: Nested loops generate rows of increasing length. This illustrates loop nesting, iteration bounds, and formatted output.
+
+5. primecheck.cpp
+- Purpose: Determine whether a given integer is prime.
+- Implementation notes: Implements `isprime()` which checks divisibility from 2 up to `n/2`. The program demonstrates boolean functions, conditional checks, and basic number-theory reasoning. (Note: checking up to `sqrt(n)` would be a more efficient improvement.)
+
+6. swap.cpp
+- Purpose: Swap two integers without using a temporary variable.
+- Implementation notes: Uses arithmetic operations (`a = a + b; b = a - b; a = a - b;`) to swap values in-place. This exercise practices careful ordering of operations and highlights potential pitfalls (overflow risks for large values).
+
+General observations
+- Input validation: The sample programs assume valid integer input and do not guard against invalid or out-of-range values. Robust production code should include validation and error handling.
+- Modularity and OOP relevance: While the exercises are procedural, they demonstrate key practices useful in OOP: separating logic into functions, keeping single responsibilities, and writing small, testable units. As coursework progresses, these functions can be refactored into class methods and grouped into classes to illustrate encapsulation.
+- Algorithmic notes: Some programs (e.g., prime checking) can be optimized; for example, iterate only to the square root of `n` and skip even numbers after checking divisibility by 2.
+
+Conclusion
+----------
+This set of introductory programs successfully reinforces essential programming skills required for Object Oriented Programming. Students should be comfortable with basic I/O, control structures, function decomposition, and simple algorithms after completing these exercises. Recommended next steps: add input validation, refactor related functions into classes (e.g., a `Rectangle` class with methods for area and perimeter), and apply small optimizations (e.g., improved prime test). These extensions will bridge the procedural work done here to more advanced OOP design and implementation topics.
+
+References / Notes
+- File list used to prepare this report: `areaandperimeter.cpp`, `firstpractical.cpp`, `forloop.cpp`, `pattern.cpp`, `primecheck.cpp`, `swap.cpp`.
+- Instructor rubric: Follow HCOE lab format for headers, signatures, and submission instructions when turning in the report.
+
+
