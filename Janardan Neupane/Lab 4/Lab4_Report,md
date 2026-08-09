@@ -1,0 +1,191 @@
+# Lab 4: Advanced Object and Classes
+
+---
+
+## Lab Details
+
+* **Course:** Object-Oriented Programming (OOP)
+* **Institution:** HCOE (2081)
+* **Student:** Aashray Karki
+* **Roll No.:** HCE082BEI001
+
+---
+
+## Description
+
+This lab report focuses on advanced concepts of objects and classes in C++. It includes the use of private data members, static data members, static member functions, const member functions, const objects, friend functions, and const reference. These concepts help in improving data security, code organization, and controlled access to class members.
+
+---
+
+## Objectives
+
+1. To understand advanced object and class concepts in C++.
+2. To implement static data members and static member functions.
+3. To understand the use of const member functions and const objects.
+4. To use friend functions for accessing private data of different classes.
+5. To apply const reference for safe object handling.
+6. To practice class-based programming using real-life examples.
+
+---
+
+## Software Required
+
+* C++ Compiler (GCC / MinGW)
+* Visual Studio Code (VS Code)
+* Terminal / Command Prompt
+
+---
+
+## Core Concepts and Theory
+
+### 1. Class and Object
+
+A class is a user-defined data type that contains data members and member functions. An object is an instance of a class. In this lab, different classes such as `ATM`, `Circle`, `LibraryBook`, `Physics`, `Maths`, and `Temperature` were used to understand class-based programming.
+
+---
+
+### 2. Private Data Members
+
+Private data members cannot be accessed directly outside the class. They help in protecting data from unauthorized access. In this lab, values such as balance, radius, book details, marks, and temperature were kept private.
+
+---
+
+### 3. Static Data Members
+
+Static data members are shared by all objects of a class. They do not belong to a single object but belong to the class as a whole.
+
+For example, in the `ATM` class, `totalTransactions` and `totalMoneyMoved` were declared as static members to store combined transaction details of all ATM objects.
+
+---
+
+### 4. Static Member Function
+
+A static member function can access only static data members of a class. It can be called using the class name without creating an object.
+
+In this lab, the function `showStats()` was used to display the total number of transactions and total money moved across all ATM objects.
+
+---
+
+### 5. Const Member Function
+
+A const member function does not modify the data members of an object. It is mainly used for functions that only read or display values.
+
+For example, functions like `getArea()`, `getCircumference()`, `display()`, `toFahrenheit()`, and `toKelvin()` were made const because they only return or display data.
+
+---
+
+### 6. Const Object
+
+A const object cannot call non-const member functions because non-const functions may modify the object. It can only call const member functions.
+
+In the `Circle` class, a normal object was allowed to call both const and non-const functions, but a const object was only allowed to call const functions.
+
+---
+
+### 7. Friend Function
+
+A friend function is not a member of a class, but it can access the private and protected members of that class. It is useful when a function needs access to private data of two or more classes.
+
+In this lab, friend functions were used to calculate total marks and compare temperature values.
+
+---
+
+### 8. Const Reference
+
+A const reference allows an object to be passed to a function without copying it and without allowing the function to modify it. This makes the program efficient and safe.
+
+In the `LibraryBook` task, `printBookInfo(const LibraryBook& book)` was used to print book details safely.
+
+---
+
+## Lab Implementation Tasks
+
+The following programs were performed in this lab:
+
+### Task 1: ATM Class with Static Members
+
+A class `ATM` was created with private members `ownerName` and `balance`. Static members `totalTransactions` and `totalMoneyMoved` were used to store combined transaction data. The functions `deposit()` and `withdraw()` updated both object data and static data.
+
+**Figure 1:** Program and output snapshot of ATM class using static members.
+
+---
+
+### Task 2: Circle Class with Const Functions
+
+A class `Circle` was created with private member `radius`. Const member functions `getArea()`, `getCircumference()`, and `display()` were used. A non-const function `setRadius()` was also used to change the radius.
+
+A normal object and a const object were created to observe which functions could be called.
+
+**Figure 2:** Program and output snapshot of Circle class using const member functions.
+
+---
+
+### Task 3: LibraryBook Class with Const Reference
+
+A class `LibraryBook` was created with private members `title`, `author`, and `isAvailable`. Const functions were used to display book information, while non-const functions `checkOut()` and `returnBook()` were used to change the availability status.
+
+A standalone function `printBookInfo(const LibraryBook& book)` was used to print details using const reference.
+
+**Figure 3:** Program and output snapshot of LibraryBook class using const reference.
+
+---
+
+### Task 4: Friend Function with Physics and Maths Classes
+
+Two classes, `Physics` and `Maths`, were created with private mark data members. A friend function `totalMarks()` was used to calculate the sum of marks. Another friend function `isDistinction()` checked whether the total marks were greater than or equal to 160 out of 200.
+
+**Figure 4:** Program and output snapshot of friend function using Physics and Maths classes.
+
+---
+
+### Task 5: Temperature Class with Friend Function
+
+A class `Temperature` was created with private member `celsius`. Const member functions were used to convert Celsius into Fahrenheit and Kelvin. A non-const function `setTemp()` was used to modify the temperature. A friend function `areEqual()` was used to compare two temperature objects.
+
+**Figure 5:** Program and output snapshot of Temperature class using friend function.
+
+---
+
+## Observation
+
+After performing this lab, it was observed that static members are useful for storing common data shared by all objects. Const member functions help protect object data from accidental modification. It was also observed that const objects can only call const functions.
+
+Friend functions were useful when private data from two different classes had to be accessed. Const reference helped pass objects to functions safely without unnecessary copying.
+
+---
+
+## Result Analysis
+
+All programs were successfully written, compiled, and executed. The ATM program correctly counted total transactions and total money moved across multiple objects. The Circle program showed the difference between normal objects and const objects. The LibraryBook program successfully demonstrated const reference and book availability management.
+
+The Physics and Maths program correctly calculated total marks and checked distinction status. The Temperature program correctly converted Celsius into Fahrenheit and Kelvin and compared two temperature objects.
+
+---
+
+## Discussion
+
+This lab helped to understand how advanced class features make C++ programs more secure and organized. Static members are useful when a value must be shared among all objects. Const functions are important when the function should only read data and not modify it.
+
+Friend functions should be used carefully because they can access private data of a class. However, they are useful when two classes need to share private data for a common operation. Overall, these concepts improve program design and prepare the foundation for more advanced object-oriented programming.
+
+---
+
+## Result
+
+The programs based on advanced object and class concepts were successfully implemented using C++. The use of static members, const functions, const objects, const reference, and friend functions was clearly understood.
+
+---
+
+## Conclusion
+
+In this lab, advanced concepts of objects and classes in C++ were studied and implemented. Static data members, static functions, const member functions, const objects, and friend functions were used in different programs. The objectives of the lab were achieved successfully. This lab helped improve the understanding of secure and organized object-oriented programming in C++.
+
+---
+
+## References
+
+[1] E. Balagurusamy, *Object-Oriented Programming with C++*, McGraw Hill Education.
+
+[2] Bjarne Stroustrup, *The C++ Programming Language*, Addison-Wesley.
+
+[3] HCOE, *Object-Oriented Programming Lab Manual*, 2081.
