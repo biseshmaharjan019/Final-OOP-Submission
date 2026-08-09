@@ -1,0 +1,36 @@
+* LAB 1: Introduction to OOP Concepts
+
+** Discussion:
+ From this lab, we are able to see the key difference in the I/O function of C & C++.
+
+ C uses the stdlib header file for I/O functions as:
+ #+begin_src c
+ #inlcude <stdio.h> // contains standard function like printf() , scanf(), etc..
+ #+end_src
+
+ whereas, C++ use iostream header file for I/O functions, iostream provides functions that are not type depended like C I/O functions
+
+  #+begin_src c++
+ #inlcude <iostream> // contains standard function like cout , cin, etc..
+ #+end_src
+
+ We were able to see the difference by implementing 3 different functions to calculate perimeter, area of an rectangle and to find the sum of first 5 natural numbers.
+
+ One of the main difference between C++ and C I/O functions are that, the C++ ones are type independent. Let's see a example:
+
+ #+begin_src c++
+
+ int main(){
+   int i=5;
+   printf("Hello world %d", i); // we can see that we have to define the type of i as %d
+   std::cout << "Hello world" << i << std::endl; // we don't have to define any type
+ }
+
+ #+end_src
+
+ Here is the output of the lab code:
+
+ [[./output.png]]
+
+** Conclusion:
+From this lab, we are able to conclude that the I/O libraries in C and C++ are fundamentally different on how they implement their functions, C++ takes more general approach by making the  functions type independent and also implements it inside the std namespace.
