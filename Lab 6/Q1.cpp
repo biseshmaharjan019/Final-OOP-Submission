@@ -1,59 +1,55 @@
-// Person and Student Class Hierarchy with Virtual Functions
-
-#include <iostream>
-#include <string>
-#include <cstdlib>
+#include<iostream>
+#include<string>
 using namespace std;
 
-class Person
-{
-    string name;
+class Person{
+    private:
+    string Name;
     int age;
 
-public:
-    Person(string n, int a) : name(n), age(a) {}
-
-    virtual void display() const
-    {
-        cout << "Name: " << name << "\nAge: " << age << endl;
+    public:
+    Person(string N, int a){
+        Name = N;
+        age = a;
     }
+        string getName()  {return Name;}
+        int getAge()  {return age;}
 
-    string getName() const
-    {
-        return name;
-    }
-
-    int getAge() const
-    {
-        return age;
-    }
+        void display(){
+            cout<<"Name: " << Name <<"Age: " << age << endl;
+        }
+    
 };
 
-class Student : public Person
-{
+class Student : public Person{
+    private:
     int rollNo;
     float gpa;
 
-public:
-    Student(string n, int a, int r, float g) : Person(n, a), rollNo(r), gpa(g) {}
-
-    void display() const override
-    {
-        cout << "Name: " << getName() << "\nAge: " << getAge() << "\nRoll No: " << rollNo << "\nGPA: " << gpa << endl;
+    public:
+    Student(int roll, float g, string N, int a) : Person(N, a){
+        rollNo = roll;
+        gpa = g;
     }
+
+    void display(){
+        
+        cout<< "Roll number: " << rollNo<<endl << "GPA: " << gpa <<endl;
+        cout<< "Name: " << getName()<< endl;
+        cout<< "Age: " << getAge()<< endl;
+
+    }
+
+   
+
 };
+ int main(){
 
-int main()
-{
-    Person p("Ram", 25);
-    Student s("Shyam", 20, 101, 3.75);
+        
 
-    cout << "Person:" << endl;
-    p.display();
+        cout<< "Person Detail:"<<endl;
+        Student s(07, 4.0, "Bardan Bhatta", 18);
+        s.display();
 
-    cout << "\nStudent:" << endl;
-    s.display();
-
-    system("pause");
-    return 0;
-}
+        return 0;
+    }

@@ -1,69 +1,67 @@
-// Vehicle, Car, and ElectricCar Multilevel Inheritance Hierarchy
-
-#include <iostream>
-#include <string>
-#include <cstdlib>
+#include<iostream>
+#include<string.h>
 using namespace std;
 
-class Vehicle
-{
-    string make;
+class Vechile{
+    private:
+    string vechile;
     int year;
 
-public:
-    Vehicle(string m, int y) : make(m), year(y) {}
+    public:
+    Vechile(string V, int Y){
+        vechile = V;
+        year = Y;
+    }
 
-    void display() const
+    string getVechile(){ return vechile;}
+    int getyear(){return year;}
+
+    void display()
     {
-        cout << "Make: " << make << "\nYear: " << year << endl;
+        cout<<"Vechile: " << vechile << "Year: " << year << endl;
     }
 };
 
-class Car : public Vehicle
-{
+class Car: public Vechile{
+    private:
     int numDoors;
 
-public:
-    Car(string m, int y, int d) : Vehicle(m, y), numDoors(d) {}
-
-    void display() const
-    {
-        Vehicle::display();
-        cout << "Number of doors: " << numDoors << endl;
+    public:
+    Car(int N, string V, int Y):Vechile(V, Y){
+        numDoors = N;
     }
+    int getnumDoors() { return numDoors; }
+
+    void display(){
+        cout<< "Number of Doors: " << numDoors<<endl;
+    }
+
 };
 
-class ElectricCar : public Car
-{
+class ElectricVechile: public Car{
+    private:
     float batteryCapacity;
     int range;
 
-public:
-    ElectricCar(string m, int y, int d, float b, int r)
-        : Car(m, y, d), batteryCapacity(b), range(r) {}
-
-    void display() const
-    {
-        Car::display();
-        cout << "Battery capacity: " << batteryCapacity << " kWh\nRange: " << range << " km" << endl;
+    public:
+    ElectricVechile(float C, int R, int N, string V, int Y):Car(N, V, Y){
+        batteryCapacity = C;
+        range = R;
+    }
+    
+    void display(){
+        cout<<"Vechile: "<< getVechile()<<endl;
+        cout<<"Year: "<< getyear()<< endl;
+        cout<<"Number of Doors: "<< getnumDoors() << endl;
+        cout<<"Battery Capacity: "<< batteryCapacity<<"Kw"<< endl;
+        cout<<"Range:"<<range<<"km"<<endl;
     }
 };
 
-int main()
-{
-    Vehicle v("Toyota", 2020);
-    Car c("Honda", 2022, 4);
-    ElectricCar e("Tesla", 2025, 4, 75.5, 480);
-
-    cout << "Vehicle:" << endl;
-    v.display();
-
-    cout << "\nCar:" << endl;
-    c.display();
-
-    cout << "\nElectric Car:" << endl;
+int main(){
+    cout<<"Vechile Details: "<< endl;
+    ElectricVechile e(1000, 1947, 5, "Toyota", 550);
     e.display();
 
-    system("pause");
     return 0;
 }
