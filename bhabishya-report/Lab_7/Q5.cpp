@@ -1,0 +1,7 @@
+#include <iostream>
+using namespace std;
+class Employee { public: virtual float calculateSalary()const=0; virtual void display()const=0; virtual ~Employee(){} };
+class FullTimeEmployee:public Employee { float monthlySalary; public: FullTimeEmployee(float s):monthlySalary(s){} float calculateSalary()const override{return monthlySalary;} void display()const override{cout<<"Full-Time Employee\nMonthly Salary: "<<calculateSalary()<<endl;} };
+class PartTimeEmployee:public Employee { float hoursWorked,hourlyRate; public: PartTimeEmployee(float h,float r):hoursWorked(h),hourlyRate(r){} float calculateSalary()const override{return hoursWorked*hourlyRate;} void display()const override{cout<<"Part-Time Employee\nHours Worked: "<<hoursWorked<<"\nHourly Rate: "<<hourlyRate<<"\nSalary: "<<calculateSalary()<<endl;} };
+class Contractor:public Employee { float projectFee,taxRate; public: Contractor(float f,float t):projectFee(f),taxRate(t){} float calculateSalary()const override{return projectFee-projectFee*taxRate/100;} void display()const override{cout<<"Contractor\nProject Fee: "<<projectFee<<"\nTax Rate: "<<taxRate<<"%\nSalary after tax: "<<calculateSalary()<<endl;} };
+int main(){FullTimeEmployee a(60000);PartTimeEmployee b(80,500);Contractor c(100000,10);Employee* e[3]={&a,&b,&c};for(int i=0;i<3;i++){e[i]->display();cout<<endl;}/* Adding another Employee-derived class does not require changing this loop; only the collection needs another pointer. */system("pause");return 0;}
