@@ -1,0 +1,10 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <typeinfo>
+using namespace std;
+class MediaFile { public: virtual void play()const=0; virtual string getInfo()const=0; virtual ~MediaFile(){cout<<"MediaFile destructor called"<<endl;} };
+class AudioFile:public MediaFile { int duration,bitrate; public: AudioFile(int d,int b):duration(d),bitrate(b){} void play()const override{cout<<"Playing audio file..."<<endl;} string getInfo()const override{return "Audio: duration="+to_string(duration)+" sec, bitrate="+to_string(bitrate)+" kbps";} int getBitrate()const{return bitrate;} ~AudioFile()override{cout<<"AudioFile destructor called"<<endl;} };
+class VideoFile:public MediaFile { int duration; string resolution; public: VideoFile(int d,string r):duration(d),resolution(r){} void play()const override{cout<<"Playing video file..."<<endl;} string getInfo()const override{return "Video: duration="+to_string(duration)+" sec, resolution="+resolution;} string getResolution()const{return resolution;} ~VideoFile()override{cout<<"VideoFile destructor called"<<endl;} };
+class ImageFile:public MediaFile { int width,height; public: ImageFile(int w,int h):width(w),height(h){} void play()const override{cout<<"Displaying image..."<<endl;} string getInfo()const override{return "Image: width="+to_string(width)+" px, height="+to_string(height)+" px";} ~ImageFile()override{cout<<"ImageFile destructor called"<<endl;} };
+int main(){vector<MediaFile*> files={new AudioFile(240,320),new VideoFile(600,"1920x1080"),new ImageFile(1920,1080)};for(MediaFile*p:files){cout<<"\nRuntime type: "<<typeid(*p).name()<<endl;p->play();cout<<p->getInfo()<<endl;VideoFile*v=dynamic_cast<VideoFile*>(p);if(v)cout<<"Video resolution: "<<v->getResolution()<<endl;AudioFile*a=dynamic_cast<AudioFile*>(p);if(a)cout<<"Audio bitrate: "<<a->getBitrate()<<" kbps"<<endl;}/* typeid identifies the runtime type; dynamic_cast safely converts a polymorphic base pointer and returns nullptr when the type does not match. */cout<<"\nDeleting media files:"<<endl;for(MediaFile*p:files)delete p;files.clear();system("pause");return 0;}
